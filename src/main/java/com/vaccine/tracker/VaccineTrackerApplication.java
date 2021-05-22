@@ -8,8 +8,8 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableScheduling
 @SpringBootApplication
-public class VaccineTrackerApplication {
-
+public class VaccineTrackerApplication {	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(VaccineTrackerApplication.class, args);
 	}
@@ -17,9 +17,6 @@ public class VaccineTrackerApplication {
 	@Bean
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
-	}
-		
-	
-
+	}	
 	
 }

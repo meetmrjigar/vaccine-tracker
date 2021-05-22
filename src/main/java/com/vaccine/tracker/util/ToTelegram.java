@@ -1,4 +1,4 @@
-package com.vaccine.tracker;
+package com.vaccine.tracker.util;
 
 import java.io.IOException; 
 
@@ -6,13 +6,16 @@ import org.springframework.web.client.RestTemplate;
 
 public class ToTelegram {
 	
-	static RestTemplate restTemplate = new RestTemplate();	
-	
-	/**
-	 * @param msg
-	 * @return String
-	 * @throws IOException
-	 */
+	static RestTemplate restTemplate = new RestTemplate();
+			
+	public RestTemplate getRestTemplate() {
+		return restTemplate;
+	}
+
+	public void setRestTemplate(RestTemplate restTemplate) {
+		ToTelegram.restTemplate = restTemplate;
+	}
+
 	public static String send(String msg) throws IOException {
 		String urlString = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s";
 		
@@ -24,6 +27,6 @@ public class ToTelegram {
 		urlString = String.format(urlString, apiToken, chatId, msg);
 		
 		// Sends the message string to the telegram channel via the bot
-		return restTemplate.getForObject(urlString, String.class);			
+		return restTemplate.getForObject(urlString, String.class);
 	}
 }

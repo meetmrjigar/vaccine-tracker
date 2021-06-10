@@ -1,6 +1,6 @@
 package com.vaccine.tracker.dto;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class StatusCheckResponse {
 
-	private ArrayList<String> pincodeOne18Plus;
-	private ArrayList<String> pincodeOne45Plus;
-	private ArrayList<String> pincodeTwo18Plus;
-	private ArrayList<String> pincodeTwo45Plus;	
+	private LinkedHashMap<String, String> pincodeOne18Plus;
+	private LinkedHashMap<String, String> pincodeOne45Plus;
+	private LinkedHashMap<String, String> pincodeTwo18Plus;
+	private LinkedHashMap<String, String> pincodeTwo45Plus;	
 }

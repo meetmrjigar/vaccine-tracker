@@ -1,0 +1,997 @@
+﻿{
+  "centers": [
+    {
+      "center_id": 8785,
+      "name": "CGHS Dispensary South Avenue",
+      "address": "153, South Avenue , New Delhi-11",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "3abf1d76-478e-46d4-a651-9272701c82a7",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "b41f1baa-43b3-48e9-9564-08065dc6dcd7",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 563206,
+      "name": "RML Site 1",
+      "address": "Baba Kharak Singh Marg",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "38dc8386-95c7-4033-b52a-59a1b40fc342",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "c50fbadc-ec64-4a56-8013-a7221b553921",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "0d2983ee-7a2b-4b54-b07f-68400ebb6c3f",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "3a4c08aa-0acc-452b-8829-d62976a4fe1f",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 679800,
+      "name": "MHA North Block",
+      "address": "North Block Central Secretariat New Delhi Delhi 110001",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 0,
+      "long": 0,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "af9971a8-6926-44cf-ad2a-e9c26a636f56",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "0e9dc361-3094-427b-aa6d-f052d2130fbf",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 702998,
+      "name": "Atal Adarsh School Mandir Marg",
+      "address": "Atal Adarsh Bal Vidyalaya Mandir Marg- New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "828647ff-dbef-457c-a1ca-e126ad50e77c",
+          "date": "29-05-2021",
+          "available_capacity": 19,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 6,
+          "available_capacity_dose2": 13
+        }
+      ]
+    },
+    {
+      "center_id": 613502,
+      "name": "Parliament House",
+      "address": "Sansad Marg,anpath, Connaught Place, New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 0,
+      "long": 0,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "97d95410-ff7c-4381-b730-bf8e1167c221",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "2d065085-5db4-454d-bab7-69a1285d05da",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 627344,
+      "name": "DGHC Supreme Court",
+      "address": "DGHC Supreme Court Complex, Bhagwan Das Road",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "3a7c7c50-551e-4ccb-8851-ebc5922865d8",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "38013be5-da74-4d18-a424-3d6bb5e49a8c",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 576584,
+      "name": "LHMC CVC 2",
+      "address": "C- 604, Connaught Circus, Bangla Sahib Rd, DIZ Area, Connaught Place, New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "8a8c0d03-d9fd-460d-8dc6-134f173f9e97",
+          "date": "29-05-2021",
+          "available_capacity": 1,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 1,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "b569494d-4eff-41d4-8262-778f8d29dfa3",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "f1a43f47-69ad-41a6-9734-aa3dfec6be0a",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "5990ece3-661e-421b-8aa5-e1c0c63566d5",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 580925,
+      "name": "RML Site 2",
+      "address": "BKS Marg,CP,New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "f65a73bc-c978-49a5-8930-1a96079a1101",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "4a4377a2-8d60-47f3-bb2f-857bae485b12",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "f9f629e1-cda6-43c7-8fc1-98f339a7c7c4",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "3a7356e7-ec57-4566-a597-7035e2582abc",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 8817,
+      "name": "MCW Shishu Kalyan Kendra PHC",
+      "address": "Shaheed Bhagat Singh Road Poly Clinic",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "db2a0f69-e622-44e7-bc20-e9d632514b23",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "4d07f58c-7cd9-4403-84a4-24ebe81e42b9",
+          "date": "31-05-2021",
+          "available_capacity": 1,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 1
+        }
+      ]
+    },
+    {
+      "center_id": 584471,
+      "name": "RML Site 3",
+      "address": "BKS Marg,CP,New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "c7bfc472-7974-427a-9c61-1ee005364deb",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "4c0cfa01-081a-4bfd-9e94-b9b7f8c0466d",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "6788e9b2-5663-4e56-a923-7a9d78de8fef",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "e0ba76e4-2f2f-4236-b394-6f460093f625",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 563048,
+      "name": "G.B.Pant Hospital DH SITE 2",
+      "address": "J.L.N Marg, Delhi Gate, New Delhi 110001",
+      "state_name": "Delhi",
+      "district_name": "Central Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "21:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "2b438525-477d-41df-83b7-3c366e254e28",
+          "date": "29-05-2021",
+          "available_capacity": 108,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-12:00PM",
+            "12:00PM-03:00PM",
+            "03:00PM-06:00PM",
+            "06:00PM-09:00PM"
+          ],
+          "available_capacity_dose1": 58,
+          "available_capacity_dose2": 50
+        },
+        {
+          "session_id": "633c85b4-a110-4d1e-be41-aea4ae26b0fa",
+          "date": "31-05-2021",
+          "available_capacity": 50,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-12:00PM",
+            "12:00PM-03:00PM",
+            "03:00PM-06:00PM",
+            "06:00PM-09:00PM"
+          ],
+          "available_capacity_dose1": 16,
+          "available_capacity_dose2": 34
+        }
+      ]
+    },
+    {
+      "center_id": 605450,
+      "name": "Supreme Court Complex",
+      "address": "Tilak Marg New Delhi-110001",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "19328935-0c0d-4d36-8a2d-1b77d354be2c",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "e7272203-149e-4762-b78e-f9a524c1b9b5",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 662447,
+      "name": "ICGS Delhi",
+      "address": "MI Room, National Stadium Complex, New Delhi, 110001",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "f7c4c496-0a44-4905-8287-3d64937128f5",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "3cff92c7-02b0-4014-a060-5ca341f86abc",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 563193,
+      "name": "LHMC CVC 1",
+      "address": "C- 604, Connaught Circus, Bangla Sahib Rd, DIZ Area, Connaught Place, New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Central Delhi",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "312bac06-3b62-4686-892c-201531c5cf31",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "ecd7feb4-d832-43be-910c-fc82c740ac5c",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "aa4bb634-8f79-4659-aaee-06b756a99f57",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "971c5f21-a6f7-4779-a94d-a54238f37ac8",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 8811,
+      "name": "MCW Babar Road NDMC PHC",
+      "address": "42 Dispensary Complex 1st Floor Babar Road New Delhi 110001",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "fa89e158-081d-4bb3-84ec-21c423703bc9",
+          "date": "29-05-2021",
+          "available_capacity": 10,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 4,
+          "available_capacity_dose2": 6
+        },
+        {
+          "session_id": "a88c8faf-e26c-4ac8-a2e9-4afed217f6e8",
+          "date": "31-05-2021",
+          "available_capacity": 2,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 2
+        }
+      ]
+    },
+    {
+      "center_id": 8815,
+      "name": "MCW Reading Road NDMC PHC",
+      "address": "Old Auto Workshop Building Mandir Marg New Delhi -110001",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "25077c06-6d0d-4470-9f95-57004405f342",
+          "date": "29-05-2021",
+          "available_capacity": 10,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 10
+        },
+        {
+          "session_id": "79005a11-45f3-4be4-a168-6e2e190679c9",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 636309,
+      "name": "DGD Patiala House Court",
+      "address": "Tilak Marg New Delhi",
+      "state_name": "Delhi",
+      "district_name": "New Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 0,
+      "long": 0,
+      "from": "09:00:00",
+      "to": "17:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "1919d34c-5795-481b-8510-b0bbd5cfe698",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "f33addad-1a88-4fec-b794-2683d0241b5c",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 632961,
+      "name": "Rouse Avenue Court",
+      "address": "Rouse Avenue Court Complex",
+      "state_name": "Delhi",
+      "district_name": "Central Delhi",
+      "block_name": "Not Applicable",
+      "pincode": 110001,
+      "lat": 28,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "18:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "18fce2ed-d56a-404c-b8d7-5cd2e0325d16",
+          "date": "31-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "6237ed7e-ec11-47ee-9aed-b6ff6d0aea07",
+          "date": "01-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-05:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "f6284933-151b-433c-9e51-afa28a5ad767",
+          "date": "02-06-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "36391765-b863-43bc-97f4-ee68ec494ff9",
+          "date": "03-06-2021",
+          "available_capacity": 1,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 1
+        }
+      ]
+    }
+  ]
+}

@@ -13,8 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CowinResponse{
-	@SuppressWarnings("unused")
-	private ArrayList<CowinResponseSessionContent> sessions;	
+public class CowinResponse{	
+	private ArrayList<CowinResponseCentersContent> centers;	
 }
 

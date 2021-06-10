@@ -1,9 +1,10 @@
 package com.vaccine.tracker.component;
 
-import java.io.IOException;  
+import java.io.IOException;   
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.vaccine.tracker.dto.CowinResponse;
-import com.vaccine.tracker.dto.CowinResponseSessionContent;
+import com.vaccine.tracker.dto.CowinResponseCentersContent;
+import com.vaccine.tracker.dto.Session;
+import com.vaccine.tracker.dto.VaccineFees;
 import com.vaccine.tracker.util.CentreUtil;
 import com.vaccine.tracker.util.ToTelegram;
 
@@ -54,27 +57,25 @@ public class Scheduler {
 	    HttpEntity <String> entity = new HttpEntity<String>(headers);
 		try {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-YYYY");
-	        LocalDateTime now = LocalDateTime.now();	        
-	        if(now.getHour()>10) {
-	        	now=now.plusDays(1);
-	        }        
-	        String url = baseUrl+"pincode="+pincode+"&date="+dtf.format(now);
+	        String url = baseUrl+"pincode="+pincode+"&date="+dtf.format(LocalDateTime.now());
 			logger.info("Ping count:"+(++counter)+" "+url+"\n");
 		    CowinResponse response = restTemplate.exchange(url, HttpMethod.GET, entity , CowinResponse.class).getBody();
-		    if(response.getSessions().size()>0) {
+		    if(response.getCenters().size()>0) {
 			    processResponse(response);	    	
-		    }		    
+		    }else {
+		    	CentreUtil.clearAllCentersPincodeOne();
+		    }
 		}catch(Exception e) {
 			logger.error(e.getLocalizedMessage());
 		}				
 	}
 
 	private void processResponse(CowinResponse response) {
-		response.getSessions().forEach(cowinResponseSessionContent -> {
-			if(cowinResponseSessionContent!=null) {
-				if(cowinResponseSessionContent.getAvailable_capacity()>0) {
+		response.getCenters().forEach(cowinResponseCentersContent -> {
+			if(cowinResponseCentersContent!=null) {
+				if(!cowinResponseCentersContent.getSessions().isEmpty()) {
 					try {
-						processFurther(cowinResponseSessionContent);
+						processFurther(cowinResponseCentersContent);
 					} catch (IOException e) {
 						logger.error(e.getLocalizedMessage());
 					}
@@ -84,20 +85,51 @@ public class Scheduler {
 		
 	}
 
-	private void processFurther(CowinResponseSessionContent cowinResponseSessionContent) throws IOException{
-		//String msg = "Slots are now open for Pincode: "+cowinResponseSessionContent.getPincode()+": \n\nBooking Date: "+cowinResponseSessionContent.getDate()+"\nCentre: "+cowinResponseSessionContent.getName()+"\n\nCapacity: "+cowinResponseSessionContent.getAvailable_capacity()+"\nAvailable capacity for dose 1: "+cowinResponseSessionContent.getAvailable_capacity_dose1()+"\nAvailable capacity for dose 2: "+cowinResponseSessionContent.getAvailable_capacity_dose2()+"\n\nVaccine: "+cowinResponseSessionContent.getVaccine()+"\nMin Age Limit: "+cowinResponseSessionContent.getMin_age_limit()+"\n\nType: "+cowinResponseSessionContent.getFee_type()+"\n\nLink: https://selfregistration.cowin.gov.in/";
-		String msg = String.format(baseMsg, cowinResponseSessionContent.getPincode(),cowinResponseSessionContent.getDate(),cowinResponseSessionContent.getName(),cowinResponseSessionContent.getAvailable_capacity(),cowinResponseSessionContent.getAvailable_capacity_dose1(),cowinResponseSessionContent.getAvailable_capacity_dose2(),cowinResponseSessionContent.getVaccine(),cowinResponseSessionContent.getMin_age_limit(),cowinResponseSessionContent.getFee_type());
-		if(cowinResponseSessionContent.getMin_age_limit()<45) {
-			if(CentreUtil.updatePinCodeOne18Plus(cowinResponseSessionContent.getName())) {
-				ToTelegram.send(msg);
-				logger.info(msg);
+	private void processFurther(CowinResponseCentersContent cowinResponseCentersContent) throws IOException{
+		cowinResponseCentersContent.getSessions().forEach(session -> {
+			if(session.getAvailable_capacity()>0) {
+				Boolean send = false;
+				int cost = 0; String msg = "";
+				msg = checkForCost(cowinResponseCentersContent, session, cost, msg);
+				if(session.getMin_age_limit()<45 && CentreUtil.updatePinCodeOne18Plus(cowinResponseCentersContent.getCenter_id()+"-"+session.getDate(), cowinResponseCentersContent.getName())) {						
+					send = true;
+				}
+				else if(session.getMin_age_limit()>=45 && CentreUtil.updatePinCodeOne45Plus(cowinResponseCentersContent.getCenter_id()+"-"+session.getDate(), cowinResponseCentersContent.getName())) {
+					send= true;										
+				}
+			if(send)
+				try {					
+					ToTelegram.send(msg);
+					logger.info(msg);
+				} catch (IOException e) {
+					logger.error(e.getLocalizedMessage());
+				}
+			}else {
+				clearAndRenewCurrentSessionTracking(cowinResponseCentersContent,session);
 			}
+		});		
+	}
+
+	private String checkForCost(CowinResponseCentersContent cowinResponseCentersContent, Session session, int cost, String msg) {
+		msg = String.format(baseMsg, cowinResponseCentersContent.getPincode(),session.getDate(),cowinResponseCentersContent.getName(),session.getAvailable_capacity(),session.getAvailable_capacity_dose1(),session.getAvailable_capacity_dose2(),session.getVaccine(),session.getMin_age_limit(),cowinResponseCentersContent.getFee_type());
+		if(!cowinResponseCentersContent.getFee_type().equals("Free")) {
+			List<VaccineFees> list = cowinResponseCentersContent.getVaccine_fees();
+			for(VaccineFees s : list) {
+				if(s.getVaccine().equals(session.getVaccine())) {
+					cost = s.getFee();
+					msg+="\nCost: Rs. "+cost;
+				}
+			}					
 		}
-		if(cowinResponseSessionContent.getMin_age_limit()>=45) {
-			if(CentreUtil.updatePinCodeOne45Plus(cowinResponseSessionContent.getName())) {
-				ToTelegram.send(msg);
-				logger.info(msg);
-			}
+		msg+="\n\nLink: https://selfregistration.cowin.gov.in/";		
+		return msg;
+	}
+
+	private void clearAndRenewCurrentSessionTracking(CowinResponseCentersContent cowinResponseCentersContent, Session session) {
+		if(session.getMin_age_limit()<45) {
+			CentreUtil.getPincodeOne18Plus().remove(cowinResponseCentersContent.getCenter_id()+"-"+session.getDate());
+		}else {
+			CentreUtil.getPincodeOne45Plus().remove(cowinResponseCentersContent.getCenter_id()+"-"+session.getDate());
 		}
 		
 	}	

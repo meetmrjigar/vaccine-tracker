@@ -17,7 +17,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -26,8 +25,6 @@ import com.vaccine.tracker.dto.CowinResponse;
 import com.vaccine.tracker.dto.CowinResponseCentersContent;
 import com.vaccine.tracker.dto.Session;
 import com.vaccine.tracker.dto.VaccineFees;
-import com.vaccine.tracker.service.CowinResponseProcessor;
-import com.vaccine.tracker.service.SaveRetrieve;
 import com.vaccine.tracker.util.CentreUtil_BK;
 import com.vaccine.tracker.util.ToTelegram_BK;
 
@@ -37,38 +34,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @Component
-public class Scheduler {
+public class SchedulerSetTwo {
 	
-	private static final Logger logger = LoggerFactory.getLogger(Scheduler.class);
+	private static final Logger logger = LoggerFactory.getLogger(SchedulerSetTwo.class);
 	
 	@Value("${baseUrl}")
 	String baseUrl;
 	
-	@Value("${baseUrl2}")
-	String baseUrl2;
-	
-	@Autowired
-	CowinResponseProcessor cowinResponseProcessor;
-	
-	@Autowired
-	SaveRetrieve saveRetrieve;
-	
+
 	List<Integer> pincodeList = new ArrayList<>();
 	
 	@Value("${pincodes}")
 	String pincodes;
 	
 	static int counter = 0;	
-	static int counter86 = 0;	
-	static int counter77 = 0;	
-	
-	
 	HttpHeaders headers = new HttpHeaders();
 	HttpEntity <String> entity;
 	DateTimeFormatter dtf;
 	String url;
-	String url86;
-	String url77;
+	
 	
 	@Autowired
 	protected RestTemplate restTemplate;
@@ -84,110 +68,52 @@ public class Scheduler {
 	    entity = new HttpEntity<String>(headers);
 	    dtf = DateTimeFormatter.ofPattern("dd-MM-YYYY");
 	    url = baseUrl+"&date="+dtf.format(LocalDateTime.now());
-	    url86 = baseUrl2+"pincode=400086&date="+dtf.format(LocalDateTime.now());	
-	    url77 = baseUrl2+"pincode=400077&date="+dtf.format(LocalDateTime.now());
-	    if(saveRetrieve.retrieve()) {
-	    	System.out.println("Loaded previous saved status");
-	    }else {
-	    	System.out.println("Previous status not found, hence not loaded");
-	    }
 	}
 	
-	@Scheduled(fixedRate = 45000, initialDelay = 10000)
+	//@Scheduled(fixedRate = 6000, initialDelay = 3000)
 	public void fixedDelaySch() {	    
 		try {
-			System.out.println(LocalDateTime.now()+"\t\t"+" Ping Mumbai : \t"+(++counter)+"\n");
+			System.out.println(LocalDateTime.now()+"\t\t"+"Set 2 | Ping "+(++counter)+"\n");
 			CowinResponse response = restTemplate.exchange(url, HttpMethod.GET, entity , CowinResponse.class).getBody();
 		    if(response.getCenters().size()>0) {
-			    processResponse(response);				   
-		    }	      
-		}catch(Exception e) {
-			logger.error(e.getLocalizedMessage());
-		}				
-	}
-	
-	@Scheduled(fixedRate = 10000, initialDelay = 3000)
-	public void fixedDelaySch86() {	    
-		try {
-			System.out.println(LocalDateTime.now()+"\t\t"+" Ping 86 : \t"+(++counter86)+"\n");
-			CowinResponse response = restTemplate.exchange(url86, HttpMethod.GET, entity , CowinResponse.class).getBody();
-		    if(response.getCenters().size()>0) {
-			    processResponse86(response);				   
-		    }	      
-		}catch(Exception e) {
-			logger.error(e.getLocalizedMessage());
-		}				
-	}
-	
-	@Scheduled(fixedRate = 10000, initialDelay = 7000)
-	public void fixedDelaySch77() {	    
-		try {
-			System.out.println(LocalDateTime.now()+"\t\t"+" Ping 77 : \t"+(++counter77)+"\n");
-			CowinResponse response = restTemplate.exchange(url77, HttpMethod.GET, entity , CowinResponse.class).getBody();
-		    if(response.getCenters().size()>0) {
-			    processResponse77(response);				   
-		    }	      
+			    processResponse(response);	    	
+		    }else {
+		    	CentreUtil_BK.clearAll2();
+		    }		    	    
 		}catch(Exception e) {
 			logger.error(e.getLocalizedMessage());
 		}				
 	}
 
-	
-	private void processResponse(CowinResponse response) {			
+	private void processResponse(CowinResponse response) {		
 		response.getCenters().stream().forEach(cowinResponseCentersContent -> {
 			if(pincodeList.contains(cowinResponseCentersContent.getPincode())
 					&& cowinResponseCentersContent.getSessions().size()>0) {
 				try {
-					cowinResponseProcessor.processFurther(cowinResponseCentersContent);
+					processFurther(cowinResponseCentersContent);
 				} catch (IOException e) {
 					logger.error(e.getLocalizedMessage());
 				}				
 			}
 		});		
 	}
-	
-	private void processResponse86(CowinResponse response) {			
-		response.getCenters().stream().forEach(cowinResponseCentersContent -> {
-			if(cowinResponseCentersContent.getSessions().size()>0) {
-				try {
-					cowinResponseProcessor.processFurther86(cowinResponseCentersContent);
-				} catch (IOException e) {
-					logger.error(e.getLocalizedMessage());
-				}				
-			}
-		});		
-	}
-	
-	private void processResponse77(CowinResponse response) {			
-		response.getCenters().stream().forEach(cowinResponseCentersContent -> {
-			if(cowinResponseCentersContent.getSessions().size()>0) {
-				try {
-					cowinResponseProcessor.processFurther77(cowinResponseCentersContent);
-				} catch (IOException e) {
-					logger.error(e.getLocalizedMessage());
-				}				
-			}
-		});		
-	}
-	
-	@SuppressWarnings("unused")
+
 	private void processFurther(CowinResponseCentersContent cowinResponseCentersContent) throws IOException{
 		cowinResponseCentersContent.getSessions().stream().forEach(session -> {
 			if(session.getAvailable_capacity()>0) {
 				Boolean send = false;
 				int cost = 0; StringBuilder msg = new StringBuilder("Slots are now open for Pincode: ");
-				String key = session.getSession_id();
-				if(session.getMin_age_limit()<45 && CentreUtil_BK.updateBelowFortyFive(key)) {	
+				String key = cowinResponseCentersContent.getCenter_id()+"-"+session.getMin_age_limit()+"-"+session.getDate()+"--"+cowinResponseCentersContent.getName();
+				if(session.getMin_age_limit()<45 && CentreUtil_BK.updateBelowFortyFive2(key.toString())) {	
 					send = true;
 				}
-				else if(session.getMin_age_limit()>=45 && CentreUtil_BK.updateFortyFivePlus(key)) {					
+				else if(session.getMin_age_limit()>=45 && CentreUtil_BK.updateFortyFivePlus2(key.toString())) {					
 					send= true;										
 				}
 			if(send) {
 				try {
 					checkForCost(cowinResponseCentersContent, session, cost, msg);
-					ToTelegram_BK.send(msg.toString());
-					System.out.println(msg);
+					ToTelegram_BK.send(msg.toString());					
 				} catch (Exception e) {
 					logger.error(e.getLocalizedMessage());
 				}
@@ -216,13 +142,12 @@ public class Scheduler {
 		msg.append("\n\nLink: https://selfregistration.cowin.gov.in/");			
 	}
 
-	
 	private void clearAndRenewCurrentSessionTracking(CowinResponseCentersContent cowinResponseCentersContent, Session session) {
-		String key = session.getSession_id();
+		String key = cowinResponseCentersContent.getCenter_id()+"-"+session.getMin_age_limit()+"-"+session.getDate()+"--"+cowinResponseCentersContent.getName();
 		if(session.getMin_age_limit()<45) {
-			CentreUtil_BK.getCentersBelowFortyFive().remove(key);
+			CentreUtil_BK.getCentersBelowFortyFive2().remove(key);
 		}else {
-			CentreUtil_BK.getCentersFortyFivePlus().remove(key);
+			CentreUtil_BK.getCentersFortyFivePlus2().remove(key);
 		}
 		
 	}	
